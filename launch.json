@@ -1,0 +1,25 @@
+/*
+docker-compose.yml ist eine Konfigurationsdatei für Docker Compose. Docker Compose ist ein Tool,
+mit dem man komplexe Docker-Umgebungen mit mehreren Containern einfach definieren und verwalten kann.
+Statt mehrere docker build, docker run, oder andere Docker-Befehle manuell auszuführen,
+kannst du in einer docker-compose.yml Datei alle Einstellungen und Befehle sammeln und automatisch anwenden lassen.
+*/
+
+{
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "Docker: Run C++",
+        "type": "cppdbg",
+        "request": "launch",
+        "program": "/app/main",
+        "cwd": "/app",
+        "MIMode": "gdb",
+        "setupCommands": [
+          { "text": "-enable-pretty-printing", "description": "Enable pretty printing", "ignoreFailures": true }
+        ],
+        "containerId": "${workspaceFolderBasename}_cpp-app_1"
+      }
+    ]
+  }
+  
